@@ -13,6 +13,10 @@ import {
   Comment as CommentIcon,
   Share as ShareIcon,
   Send as SendIcon,
+  PhotoCamera as PhotoCameraIcon,
+  Videocam as VideocamIcon,
+  Event as EventIcon,
+  Article as ArticleIcon,
 } from "@mui/icons-material";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -91,126 +95,78 @@ export default function Home() {
           <Grid
             size={{ xs: 12, sm: 12, md: 3 }}
           >
-            <Item>
+            <Item
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "row", sm: "row", md: "column" },
+                flexWrap: { xs: "wrap", sm: "wrap", md: "nowrap" },
+                gap: 0,
+                alignItems: "stretch",
+                "@media (max-width:470px)": {
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                },
+              }}
+            >
               <Box
                 sx={{
                   p: 2,
-                  display: { xs: "flex", sm: "flex", md: "block" },
-                  alignItems: { xs: "center", sm: "center", md: "flex-start" },
-                  gap: { xs: 2, sm: 2, md: 0 },
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  flex: { xs: "1 1 240px", sm: "1 1 240px", md: "none" },
+                  borderRight: { xs: 1, sm: 1, md: 0 },
+                  borderBottom: { xs: 0, sm: 0, md: 1 },
+                  borderColor: "divider",
+                  mr: { xs: 1, sm: 1, md: 0 },
+                  "@media (max-width:470px)": {
+                    borderRight: 1,
+                    borderBottom: 0,
+                    mr: 1,
+                  },
                 }}
               >
-                <Box sx={{ display: "flex", alignItems: "center", mb: { xs: 0, sm: 0, md: 2 }, flex: { xs: "0 0 auto", sm: "0 0 auto", md: "1" } }}>
-                  <Avatar sx={{ mr: 2 }}>JD</Avatar>
-                  <Box>
-                    <Typography variant="subtitle1" fontWeight={600}>
-                      John Doe
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      Software Engineer
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  sx={{
-                    borderTop: { xs: 0, sm: 0, md: 1 },
-                    borderLeft: { xs: 1, sm: 1, md: 0 },
-                    borderColor: "divider",
-                    pt: { xs: 0, sm: 0, md: 2 },
-                    pl: { xs: 2, sm: 2, md: 0 },
-                    display: { xs: "flex", sm: "flex", md: "block" },
-                    gap: { xs: 2, sm: 2, md: 0 },
-                    alignItems: { xs: "center", sm: "center", md: "flex-start" },
-                  }}
-                >
-                  <Box>
-                    <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                      Profile viewers
-                    </Typography>
-                    <Typography variant="body2" fontWeight={600}>
-                      150
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                      Post impressions
-                    </Typography>
-                    <Typography variant="body2" fontWeight={600}>
-                      1,234
-                    </Typography>
-                  </Box>
+                <Avatar sx={{ mr: 2 }}>JD</Avatar>
+                <Box>
+                  <Typography variant="subtitle1" fontWeight={600}>
+                    John Doe
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Software Engineer
+                  </Typography>
                 </Box>
               </Box>
               <Box
                 sx={{
-                  mt: { xs: 0, sm: 0, md: 2 },
                   p: 2,
-                  borderTop: { xs: 1, sm: 1, md: 0 },
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  flex: { xs: "1 1 240px", sm: "1 1 240px", md: "none" },
+                  borderTop: { xs: 0, sm: 0, md: 1 },
                   borderColor: "divider",
-                  display: { xs: "flex", sm: "flex", md: "block" },
-                  gap: { xs: 2, sm: 2, md: 0 },
-                  alignItems: { xs: "center", sm: "center", md: "flex-start" },
+                  pl: { xs: 3, sm: 3, md: 2 },
+                  "@media (max-width:470px)": {
+                    borderTop: 0,
+                    pl: 3,
+                  },
                 }}
               >
-                <Typography variant="subtitle2" fontWeight={600} sx={{ mb: { xs: 0, sm: 0, md: 1 }, mr: { xs: 1, sm: 1, md: 0 } }}>
-                  Recent
-                </Typography>
-                <Box sx={{ display: "flex", alignItems: "center", mb: { xs: 0, sm: 0, md: 1 }, gap: { xs: 1, sm: 1, md: 0 } }}>
-                  <Box
-                    sx={{
-                      width: 24,
-                      height: 24,
-                      borderRadius: "50%",
-                      bgcolor: "primary.main",
-                      mr: 1,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Typography variant="caption" sx={{ color: "white" }}>
-                      #
-                    </Typography>
-                  </Box>
-                  <Typography variant="body2">React</Typography>
+                <Box>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                    Profile viewers
+                  </Typography>
+                  <Typography variant="body2" fontWeight={600}>
+                    150
+                  </Typography>
                 </Box>
-                <Box sx={{ display: "flex", alignItems: "center", mb: { xs: 0, sm: 0, md: 1 }, gap: { xs: 1, sm: 1, md: 0 } }}>
-                  <Box
-                    sx={{
-                      width: 24,
-                      height: 24,
-                      borderRadius: "50%",
-                      bgcolor: "primary.main",
-                      mr: 1,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Typography variant="caption" sx={{ color: "white" }}>
-                      #
-                    </Typography>
-                  </Box>
-                  <Typography variant="body2">JavaScript</Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 1, sm: 1, md: 0 } }}>
-                  <Box
-                    sx={{
-                      width: 24,
-                      height: 24,
-                      borderRadius: "50%",
-                      bgcolor: "primary.main",
-                      mr: 1,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Typography variant="caption" sx={{ color: "white" }}>
-                      #
-                    </Typography>
-                  </Box>
-                  <Typography variant="body2">TypeScript</Typography>
+                <Box>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                    Post impressions
+                  </Typography>
+                  <Typography variant="body2" fontWeight={600}>
+                    1,234
+                  </Typography>
                 </Box>
               </Box>
             </Item>
@@ -230,16 +186,28 @@ export default function Home() {
                   />
                 </Box>
                 <Box sx={{ display: "flex", justifyContent: "space-around" }}>
-                  <Button startIcon={<WorkIcon />} size="small">
+                  <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                    <PhotoCameraIcon />
+                  </IconButton>
+                  <Button startIcon={<PhotoCameraIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                     Photo
                   </Button>
-                  <Button startIcon={<PeopleIcon />} size="small">
+                  <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                    <VideocamIcon />
+                  </IconButton>
+                  <Button startIcon={<VideocamIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                     Video
                   </Button>
-                  <Button startIcon={<WorkIcon />} size="small">
+                  <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                    <EventIcon />
+                  </IconButton>
+                  <Button startIcon={<EventIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                     Event
                   </Button>
-                  <Button startIcon={<WorkIcon />} size="small">
+                  <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                    <ArticleIcon />
+                  </IconButton>
+                  <Button startIcon={<ArticleIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                     Article
                   </Button>
                 </Box>
@@ -276,16 +244,28 @@ export default function Home() {
                 </Box>
               </CardContent>
               <CardActions>
-                <Button startIcon={<ThumbUpIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <ThumbUpIcon />
+                </IconButton>
+                <Button startIcon={<ThumbUpIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Like
                 </Button>
-                <Button startIcon={<CommentIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <CommentIcon />
+                </IconButton>
+                <Button startIcon={<CommentIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Comment
                 </Button>
-                <Button startIcon={<ShareIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <ShareIcon />
+                </IconButton>
+                <Button startIcon={<ShareIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Share
                 </Button>
-                <Button startIcon={<SendIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <SendIcon />
+                </IconButton>
+                <Button startIcon={<SendIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Send
                 </Button>
               </CardActions>
@@ -318,16 +298,28 @@ export default function Home() {
                 </Box>
               </CardContent>
               <CardActions>
-                <Button startIcon={<ThumbUpIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <ThumbUpIcon />
+                </IconButton>
+                <Button startIcon={<ThumbUpIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Like
                 </Button>
-                <Button startIcon={<CommentIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <CommentIcon />
+                </IconButton>
+                <Button startIcon={<CommentIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Comment
                 </Button>
-                <Button startIcon={<ShareIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <ShareIcon />
+                </IconButton>
+                <Button startIcon={<ShareIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Share
                 </Button>
-                <Button startIcon={<SendIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <SendIcon />
+                </IconButton>
+                <Button startIcon={<SendIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Send
                 </Button>
               </CardActions>
@@ -355,16 +347,28 @@ export default function Home() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button startIcon={<ThumbUpIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <ThumbUpIcon />
+                </IconButton>
+                <Button startIcon={<ThumbUpIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Like
                 </Button>
-                <Button startIcon={<CommentIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <CommentIcon />
+                </IconButton>
+                <Button startIcon={<CommentIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Comment
                 </Button>
-                <Button startIcon={<ShareIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <ShareIcon />
+                </IconButton>
+                <Button startIcon={<ShareIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Share
                 </Button>
-                <Button startIcon={<SendIcon />} size="small">
+                <IconButton size="small" sx={{ display: { xs: "inline-flex", sm: "none", md: "none" } }}>
+                  <SendIcon />
+                </IconButton>
+                <Button startIcon={<SendIcon />} size="small" sx={{ display: { xs: "none", sm: "inline-flex", md: "inline-flex" } }}>
                   Send
                 </Button>
               </CardActions>
