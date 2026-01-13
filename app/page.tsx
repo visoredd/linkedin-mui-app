@@ -41,7 +41,7 @@ export default function Home() {
             sx={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "space-between",
+              justifyContent: "space-evenly",
               py: 1.5,
             }}
           >
@@ -51,7 +51,7 @@ export default function Home() {
               </Typography>
               <Box
                 sx={{
-                  display: { xs: "none", sm: "flex" },
+                  display: {  sm: "flex" },
                   alignItems: "center",
                   gap: 1,
                 }}
@@ -66,7 +66,7 @@ export default function Home() {
                 />
               </Box>
             </Box>
-            <Box sx={{ display: "flex", gap: 1 }}>
+            <Box sx={{  display: { xs: "none", sm: "flex" }, gap: 1 }}>
               <IconButton>
                 <HomeIcon />
               </IconButton>
@@ -82,7 +82,10 @@ export default function Home() {
               <IconButton>
                 <NotificationsIcon />
               </IconButton>
-              <IconButton>
+              
+            </Box>
+            <Box sx={{ display: { xs: "flex" } }}>
+            <IconButton>
                 <Avatar>U</Avatar>
               </IconButton>
             </Box>
@@ -112,18 +115,15 @@ export default function Home() {
                 sx={{
                   p: 2,
                   display: "flex",
+                  justifyContent: "center",
                   alignItems: "center",
                   gap: 2,
                   flex: { xs: "1 1 240px", sm: "1 1 240px", md: "none" },
-                  borderRight: { xs: 1, sm: 1, md: 0 },
+                  borderRight: { xs: 0, sm:1, md: 0 },
                   borderBottom: { xs: 0, sm: 0, md: 1 },
                   borderColor: "divider",
                   mr: { xs: 1, sm: 1, md: 0 },
-                  "@media (max-width:470px)": {
-                    borderRight: 1,
-                    borderBottom: 0,
-                    mr: 1,
-                  },
+                  
                 }}
               >
                 <Avatar sx={{ mr: 2 }}>JD</Avatar>
@@ -141,6 +141,8 @@ export default function Home() {
                   p: 2,
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "space-between",
+                  textAlign: "center",
                   gap: 2,
                   flex: { xs: "1 1 240px", sm: "1 1 240px", md: "none" },
                   borderTop: { xs: 0, sm: 0, md: 1 },
